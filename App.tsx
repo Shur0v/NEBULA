@@ -29,27 +29,27 @@ const App: React.FC = () => {
       {currentScreen === 'DISCOVERY' && (
         <Discovery onGameClick={handleGameSelect} />
       )}
-      
+
       {currentScreen === 'DETAIL' && selectedGame && (
-        <GameDetail 
-          game={selectedGame} 
-          onBack={handleBack} 
-          onPlay={handlePlay} 
+        <GameDetail
+          game={selectedGame}
+          onBack={handleBack}
+          onPlay={handlePlay}
         />
       )}
 
       {currentScreen === 'PLAYER' && selectedGame && (
-        <Player 
-          game={selectedGame} 
-          onExit={() => setCurrentScreen('DETAIL')} 
+        <Player
+          game={selectedGame}
+          onExit={() => setCurrentScreen('DETAIL')}
         />
       )}
 
       {/* Persistent Bottom Nav (Mobile Only) */}
       {currentScreen === 'DISCOVERY' && (
-        <nav className="fixed bottom-0 inset-x-0 h-16 bg-[#07060A]/90 backdrop-blur-xl border-t border-white/5 flex items-center justify-around md:hidden z-50">
+        <nav className="fixed bottom-0 inset-x-0 h-16 bg-[#020104]/90 backdrop-blur-xl border-t border-white/5 flex items-center justify-around md:hidden z-50">
           <button className="flex flex-col items-center gap-1 text-[#35E7FF]">
-            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" /></svg>
             <span className="text-[10px] font-bold uppercase tracking-widest">Home</span>
           </button>
           <button className="flex flex-col items-center gap-1 text-white/40">

@@ -3,7 +3,7 @@ import { Game, Category, DesignTokens } from './types';
 
 export const TOKENS: DesignTokens = {
   colors: {
-    voidBlack: '#07060A',
+    voidBlack: '#020104',
     deepSpacePurple: '#140A24',
     nebulaPurple: '#22103A',
     neonCyan: '#35E7FF',

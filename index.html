@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +11,7 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #07060A;
+            background-color: #020104;
             color: #FFFFFF;
             margin: 0;
             padding: 0;
@@ -26,14 +26,14 @@
             z-index: -10;
             pointer-events: none;
             overflow: hidden;
-            background: #07060A;
+            background: radial-gradient(circle at center, #050308 0%, #000000 100%);
         }
 
         .blob {
             position: absolute;
             border-radius: 50%;
             filter: blur(140px);
-            opacity: 0.45;
+            opacity: 0.15;
             will-change: transform;
             mix-blend-mode: screen;
         }
@@ -42,23 +42,28 @@
         ::-webkit-scrollbar {
             width: 6px;
         }
+
         ::-webkit-scrollbar-track {
             background: rgba(7, 6, 10, 0.5);
         }
+
         ::-webkit-scrollbar-thumb {
             background: #22103A;
             border-radius: 10px;
         }
+
         ::-webkit-scrollbar-thumb:hover {
             background: #9B5CFF;
         }
-        
+
         .neon-text-cyan {
             text-shadow: 0 0 10px rgba(53, 231, 255, 0.6);
         }
+
         .neon-text-magenta {
             text-shadow: 0 0 10px rgba(255, 61, 242, 0.6);
         }
+
         .glass-panel {
             background: rgba(34, 16, 58, 0.35);
             backdrop-filter: blur(20px);
@@ -67,9 +72,15 @@
         }
 
         @keyframes shimmer {
-            0% { background-position: -200% 0; }
-            100% { background-position: 200% 0; }
+            0% {
+                background-position: -200% 0;
+            }
+
+            100% {
+                background-position: 200% 0;
+            }
         }
+
         .shimmer-text {
             background: linear-gradient(90deg, #35E7FF, #9B5CFF, #FF3DF2, #35E7FF);
             background-size: 200% auto;
@@ -90,12 +101,18 @@
             pointer-events: none;
             animation: scanline 8s linear infinite;
         }
+
         @keyframes scanline {
-            0% { bottom: 100%; }
-            100% { bottom: -100px; }
+            0% {
+                bottom: 100%;
+            }
+
+            100% {
+                bottom: -100px;
+            }
         }
     </style>
-<script type="importmap">
+    <script type="importmap">
 {
   "imports": {
     "react/": "https://esm.sh/react@^19.2.4/",
@@ -105,22 +122,24 @@
 }
 </script>
 </head>
+
 <body>
     <!-- Global Animated Cosmic Background -->
     <div class="cosmic-overlay" id="cosmicOverlay">
         <div id="blob1" class="blob w-[80vw] h-[80vw] bg-[#9B5CFF] top-0 left-0"></div>
         <div id="blob2" class="blob w-[70vw] h-[70vw] bg-[#35E7FF] bottom-0 right-0"></div>
-        <div id="blob3" class="blob w-[60vw] h-[60vw] bg-[#FF3DF2] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+        <div id="blob3" class="blob w-[60vw] h-[60vw] bg-[#FF3DF2] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+        </div>
         <div id="blob4" class="blob w-[90vw] h-[90vw] bg-[#140A24] -top-1/4 -left-1/4 opacity-60"></div>
     </div>
-    
+
     <div id="root"></div>
     <div class="scanline"></div>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const blobs = ['#blob1', '#blob2', '#blob3', '#blob4'];
-            
+
             // Initial positioning and movement for mesh effect
             blobs.forEach((selector) => {
                 const animateBlob = () => {
@@ -133,13 +152,13 @@
                         onComplete: animateBlob
                     });
                 };
-                
+
                 gsap.set(selector, {
                     x: gsap.utils.random(-10, 10) + 'vw',
                     y: gsap.utils.random(-10, 10) + 'vh',
                     scale: 1.5
                 });
-                
+
                 animateBlob();
             });
 
@@ -153,7 +172,7 @@
 
             // Subtle overall brightness pulse
             gsap.to(".blob", {
-                opacity: 0.6,
+                opacity: 0.25,
                 duration: 5,
                 repeat: -1,
                 yoyo: true,
@@ -161,5 +180,7 @@
             });
         });
     </script>
+    <script type="module" src="/index.tsx"></script>
 </body>
+
 </html>

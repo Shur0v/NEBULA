@@ -21,7 +21,7 @@ export const Discovery: React.FC<DiscoveryProps> = ({ onGameClick }) => {
     return MOCK_GAMES.filter(game => {
       const matchesCategory = activeCategory === 'all' || game.category === activeCategory;
       const matchesSearch = game.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                            game.developer.toLowerCase().includes(searchQuery.toLowerCase());
+        game.developer.toLowerCase().includes(searchQuery.toLowerCase());
       return matchesCategory && matchesSearch;
     });
   }, [activeCategory, searchQuery]);
@@ -41,34 +41,34 @@ export const Discovery: React.FC<DiscoveryProps> = ({ onGameClick }) => {
               </span>
               NEBULA CORE: ONLINE
             </div>
-            
+
             <div className="space-y-2">
-                <h1 className="text-6xl md:text-8xl font-black tracking-tighter leading-none italic">
+              <h1 className="text-6xl md:text-8xl font-black tracking-tighter leading-none italic">
                 <span className="shimmer-text">NEBULA</span>
-                <br/>
+                <br />
                 <span className="text-white drop-shadow-[0_10px_20px_rgba(0,0,0,0.5)]">RETRO</span>
-                </h1>
-                <p className="text-white/60 text-lg md:text-2xl font-medium max-w-xl leading-relaxed">
-                Experience the golden era re-imagined. 
+              </h1>
+              <p className="text-white/60 text-lg md:text-2xl font-medium max-w-xl leading-relaxed">
+                Experience the golden era re-imagined.
                 <span className="text-[#35E7FF] font-bold"> Fast. Immersive. Pixel-perfect.</span>
-                </p>
+              </p>
             </div>
           </div>
-          
+
           <div className="w-full lg:w-[450px] space-y-4">
-             <div className="glass-panel p-6 rounded-3xl border-[#35E7FF]/20 shadow-[0_0_50px_rgba(53,231,255,0.1)]">
-                <p className="text-[10px] font-black uppercase text-[#35E7FF] tracking-widest mb-3">Gateway Access</p>
-                <SearchInput value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
-             </div>
+            <div className="glass-panel p-6 rounded-3xl border-[#35E7FF]/20 shadow-[0_0_50px_rgba(53,231,255,0.1)]">
+              <p className="text-[10px] font-black uppercase text-[#35E7FF] tracking-widest mb-3">Gateway Access</p>
+              <SearchInput value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
+            </div>
           </div>
         </div>
       </header>
 
       {/* Main Content Sections */}
       <div className="max-w-7xl mx-auto w-full px-4 md:px-12 space-y-20">
-        
+
         {/* Navigation & Category Section */}
-        <div className="sticky top-4 z-40 bg-[#07060A]/40 backdrop-blur-2xl px-6 py-4 rounded-3xl border border-white/5 shadow-2xl">
+        <div className="sticky top-4 z-40 bg-[#020104]/40 backdrop-blur-2xl px-6 py-4 rounded-3xl border border-white/5 shadow-2xl">
           <FilterChips activeCategory={activeCategory} onSelect={setActiveCategory} />
         </div>
 
@@ -79,11 +79,11 @@ export const Discovery: React.FC<DiscoveryProps> = ({ onGameClick }) => {
             <section className="space-y-10">
               <div className="flex items-center justify-between">
                 <div className="space-y-1">
-                    <h2 className="text-2xl md:text-4xl font-black text-white italic tracking-tighter flex items-center gap-4">
-                        <span className="w-2 h-10 bg-gradient-to-b from-[#35E7FF] to-transparent rounded-full shadow-[0_0_15px_rgba(53,231,255,0.5)]"></span>
-                        TRENDING NOW
-                    </h2>
-                    <p className="text-[10px] text-white/30 font-bold uppercase tracking-[0.4em] ml-6">Most Played This Cycle</p>
+                  <h2 className="text-2xl md:text-4xl font-black text-white italic tracking-tighter flex items-center gap-4">
+                    <span className="w-2 h-10 bg-gradient-to-b from-[#35E7FF] to-transparent rounded-full shadow-[0_0_15px_rgba(53,231,255,0.5)]"></span>
+                    TRENDING NOW
+                  </h2>
+                  <p className="text-[10px] text-white/30 font-bold uppercase tracking-[0.4em] ml-6">Most Played This Cycle</p>
                 </div>
                 <button className="hidden sm:block px-6 py-2 glass-panel rounded-full text-[11px] font-black text-white hover:text-[#35E7FF] hover:border-[#35E7FF]/40 transition-all uppercase tracking-widest">
                   Global Rank
@@ -102,8 +102,8 @@ export const Discovery: React.FC<DiscoveryProps> = ({ onGameClick }) => {
             <section className="space-y-10">
               <div className="space-y-1">
                 <h2 className="text-2xl md:text-4xl font-black text-white italic tracking-tighter flex items-center gap-4">
-                    <span className="w-2 h-10 bg-gradient-to-b from-[#9B5CFF] to-transparent rounded-full shadow-[0_0_15px_rgba(155,92,255,0.5)]"></span>
-                    THE ARCHIVE
+                  <span className="w-2 h-10 bg-gradient-to-b from-[#9B5CFF] to-transparent rounded-full shadow-[0_0_15px_rgba(155,92,255,0.5)]"></span>
+                  THE ARCHIVE
                 </h2>
                 <p className="text-[10px] text-white/30 font-bold uppercase tracking-[0.4em] ml-6">Curated Selection</p>
               </div>
@@ -132,8 +132,8 @@ export const Discovery: React.FC<DiscoveryProps> = ({ onGameClick }) => {
                 <div className="w-24 h-24 mb-8 flex items-center justify-center bg-[#22103A] rounded-full text-5xl animate-bounce shadow-[0_0_50px_rgba(155,92,255,0.3)]">👾</div>
                 <h3 className="text-3xl font-black text-white italic tracking-tighter">SIGNAL LOST</h3>
                 <p className="text-white/50 mt-4 max-w-sm text-lg font-medium leading-relaxed">We scanned the sector but found no relics matching those coordinates.</p>
-                <button 
-                  onClick={() => {setActiveCategory('all'); setSearchQuery('');}}
+                <button
+                  onClick={() => { setActiveCategory('all'); setSearchQuery(''); }}
                   className="mt-12 px-12 py-5 bg-gradient-to-r from-[#35E7FF] to-[#9B5CFF] text-white rounded-2xl font-black text-sm uppercase tracking-[0.2em] shadow-[0_0_30px_rgba(53,231,255,0.3)] hover:scale-105 transition-all"
                 >
                   Return to Home Base
@@ -149,19 +149,19 @@ export const Discovery: React.FC<DiscoveryProps> = ({ onGameClick }) => {
             {/* Pulsing Light Elements */}
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#FF3DF2]/10 blur-[150px] rounded-full -translate-y-1/2 translate-x-1/2 group-hover:bg-[#FF3DF2]/20 transition-all duration-[3s]"></div>
             <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#35E7FF]/5 blur-[120px] rounded-full translate-y-1/2 -translate-x-1/2"></div>
-            
+
             <div className="relative z-10 text-center lg:text-left lg:flex-grow space-y-8">
               <div className="flex justify-center lg:justify-start">
-                  <span className="px-5 py-2 bg-[#FF3DF2]/15 text-[#FF3DF2] text-xs font-black rounded-full border border-[#FF3DF2]/30 uppercase tracking-[0.3em] shadow-[0_0_20px_rgba(255,61,242,0.2)]">
-                    Ascension Protocol
-                  </span>
+                <span className="px-5 py-2 bg-[#FF3DF2]/15 text-[#FF3DF2] text-xs font-black rounded-full border border-[#FF3DF2]/30 uppercase tracking-[0.3em] shadow-[0_0_20px_rgba(255,61,242,0.2)]">
+                  Ascension Protocol
+                </span>
               </div>
               <h2 className="text-4xl md:text-7xl font-black text-white leading-[0.9] tracking-tighter">
-                UNLEASH THE <br/><span className="shimmer-text italic uppercase">PRO ARCHIVE</span>
+                UNLEASH THE <br /><span className="shimmer-text italic uppercase">PRO ARCHIVE</span>
               </h2>
               <p className="text-white/60 text-lg md:text-xl max-w-xl font-medium leading-relaxed">
-                Elevate your sessions with <span className="text-[#35E7FF] font-bold">4K Upscaling</span>, 
-                <span className="text-[#9B5CFF] font-bold"> Cloud Save Syncing</span>, and 
+                Elevate your sessions with <span className="text-[#35E7FF] font-bold">4K Upscaling</span>,
+                <span className="text-[#9B5CFF] font-bold"> Cloud Save Syncing</span>, and
                 unlimited access to our <span className="text-[#FF3DF2] font-bold">VIP Gallery</span>.
               </p>
               <div className="pt-4 flex flex-col sm:flex-row items-center gap-8">
